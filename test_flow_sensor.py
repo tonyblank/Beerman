@@ -26,7 +26,7 @@ GPIO.add_event_detect(23, GPIO.RISING, callback=doAClick, bouncetime=20)
 while True:
   currentTime = int(time.time() * flowmeter.FlowMeter.MS_IN_A_SECOND)
 
-  print currentTime
+  print 'current pour: %s || total pour: %s' % (fm.thisPour, fm.total)
 
   if (fm.thisPour > 0.01 and currentTime - fm.lastClick > 1000): # 1 seconds of inactivity causes a print msg
     msg = "Someone just blew %s of %s with a total breath of %s.\n" % (fm.getFormattedThisPour(), fm.getBeverage(), fm.getFormattedTotalPour())
