@@ -41,6 +41,7 @@ class FlowMeter():
         instPour = self.flow * (self.clickDelta / FlowMeter.MS_IN_A_SECOND)  
         self.thisPour += instPour
         self.totalPour += instPour
+        print 'this pour: %s\ntotal pour: %s\n' % (self.thisPour, self.totalPour)
     # Update the last click
     self.lastClick = currentTime
 
