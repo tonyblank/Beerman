@@ -15,7 +15,7 @@ fm.enabled = True
 
 
 def doAClick(channel):
-  currentTime = int(time.time() * FlowMeter.MS_IN_A_SECOND)
+  currentTime = int(time.time() * flowmeter.FlowMeter.MS_IN_A_SECOND)
   if fm.enabled == True:
     fm.update(currentTime)
 
@@ -24,7 +24,7 @@ GPIO.add_event_detect(23, GPIO.RISING, callback=doAClick, bouncetime=20)
 
 
 while True:
-  currentTime = int(time.time() * FlowMeter.MS_IN_A_SECOND)
+  currentTime = int(time.time() * flowmeter.FlowMeter.MS_IN_A_SECOND)
 
   if (fm.thisPour > 0.23 and currentTime - fm.lastClick > 5000): # 5 seconds of inactivity causes a print msg
     msg = "Someone just blew %s of %s with a total breath of %s.\n" % (fm.getFormattedThisPour(), fm.getBeverage(), fm.getFormattedTotalPour())
