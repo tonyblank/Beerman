@@ -48,10 +48,10 @@ class FlowMeter():
     return str(self.beverage)
 
   def getFormattedClickDelta(self):
-     return str(self.clickDelta) + ' ms'
+    return str(self.clickDelta) + ' ms'
   
   def getFormattedHertz(self):
-     return str(round(self.hertz,3)) + ' Hz'
+    return str(round(self.hertz,3)) + ' Hz'
   
   def getFormattedFlow(self):
     if(self.displayFormat == 'metric'):
