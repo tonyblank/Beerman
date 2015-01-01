@@ -2,7 +2,7 @@
 
 import RPi.GPIO as GPIO
 
-from ... import flowmeter
+import flowmeter
 
 
 GPIO.setmode(GPIO.BCM) # use real GPIO numbering
